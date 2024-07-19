@@ -1,0 +1,19 @@
+name: First-Action
+on: workflow_dispatch
+jobs:
+  FirstJob: 
+    runs-on: ubuntu:latest
+    steps:
+      - name: Greeting Hello
+        run: echo "Hello"
+      - name: Asking How are you
+        run: echo "How are you?"
+  SecondJob:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Greeting Hello
+          run: echo "Hello"
+        - name: Saying I am Fine
+          run: echo "I am fine. Thank You"
+        
+      
