@@ -1,0 +1,13 @@
+# Expressions and Context on Github Actions
+# Context -> https://docs.github.com/en/actions/learn-github-actions/contexts
+# Expressions -> https://docs.github.com/en/actions/learn-github-actions/expressions
+name: Output Information
+on: workflow_dispatch
+jobs:
+  Output:
+    runs-on: ubuntu-latest
+    steps:
+      # Github Actions provides a context object that contains information about the workflow.
+      # We can use github expression to access the context object inside steps.
+      - name: Output Github Context Information
+        run: echo "${{ github }}"
