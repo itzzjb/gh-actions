@@ -1,0 +1,22 @@
+name: Run Tests
+# Setting the workflow to run on every push to the repository
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Getting the code
+        # We can use predefined actions in github marketplace instead using run keyword to run shell commands
+        # We can use uses keyword to specify the action we want to use
+        # There are many predefined actions available in github marketplace and you also can create your own actions
+        uses: actions/checkout@v3
+      - name: Installing node
+        uses: actions/setup-node@v3
+        # Some actions require configuration, like the node version in this case
+        # We can use with keyword to pass these configurations
+        with:
+          node-version: 18
+      - name: Installing dependencies
+        run: npm ci
+      - name: Running tests
+        run: npm run test
