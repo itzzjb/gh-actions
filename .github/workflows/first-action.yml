@@ -1,19 +1,24 @@
 name: First-Action
+# workflow_dispatch sets the workflow to be triggered mannualy via github
 on: workflow_dispatch
 jobs:
   FirstJob: 
+    # Every job must have a runner
     runs-on: ubuntu-latest
     steps:
+      # Steps need to be listed down. So we need to use "-". Others are dictionaries.
       - name: Greeting Hello
         run: echo "Hello"
       - name: Asking How are you
         run: echo "How are you?"
   SecondJob:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Greeting Hello
-          run: echo "Hello"
-        - name: Saying I am Fine
-          run: echo "I am fine. Thank You"
+    # Every job must have a runner
+    runs-on: ubuntu-latest
+    steps:
+      # Steps need to be listed down. So we need to use "-". Others are 
+      - name: Greeting Hello
+        run: echo "Hello"
+      - name: Saying I am Fine
+        run: echo "I am fine. Thank You"
         
       
