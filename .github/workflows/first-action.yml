@@ -8,8 +8,10 @@ jobs:
     steps:
       # Steps need to be listed down. So we need to use "-". Others are dictionaries.
       - name: Greeting Hello
+        # With run keyword we can simply execute shell commands on the runner machine
         run: echo "Hello"
       - name: Asking How are you
+        # With run keyword we can simply execute shell commands on the runner machine
         run: echo "How are you?"
   SecondJob:
     # Every job must have a runner
@@ -17,8 +19,10 @@ jobs:
     steps:
       # Steps need to be listed down. So we need to use "-". Others are 
       - name: Greeting Hello
+        # With run keyword we can simply execute shell commands on the runner machine
         run: echo "Hello"
       - name: Saying I am Fine
+        # With run keyword we can simply execute shell commands on the runner machine
         run: echo "I am fine. Thank You"
         
       
