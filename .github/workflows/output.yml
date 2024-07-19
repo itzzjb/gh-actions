@@ -9,5 +9,6 @@ jobs:
     steps:
       # Github Actions provides a context object that contains information about the workflow.
       # We can use github expression to access the context object inside steps.
+      # We need to use toJSON function in Expressions to convert the context object to a JSON string.
       - name: Output Github Context Information
-        run: echo "${{ github }}"
+        run: echo "${{ toJSON(github) }}"
