@@ -25,6 +25,9 @@ jobs:
         run: npm run test
   # Running another job to deploy the application
   deploy:
+    # To start deploying the application after the test job is successful, we can use the needs keyword
+    # If there are multiple jobs that need to be run before this job, we can specify them in an array -> [test, another-job]
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Getting the code
