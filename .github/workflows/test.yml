@@ -1,4 +1,6 @@
 name: Run Tests
+# Giving a run name to the workflow
+run-name: Run Tests
 # Setting the workflow to run on every push to the repository
 on: push
 jobs:
