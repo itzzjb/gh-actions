@@ -1,8 +1,9 @@
 name: Deploy Application
 # Giving a run name to the workflow
 run-name: Deploy Application
-# Setting the workflow to run on every push to the repository
-on: push
+# If we want to trigger the workflow for multiple events, we give a array of events to the on keyword
+# In this case, we are triggering the workflow for push and workflow_dispatch events
+on: [push, workflow_dispatch]
 jobs:
   # Running a job to test the application
   test:
