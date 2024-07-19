@@ -1,9 +1,10 @@
-name: Run Tests
+name: Deploy Application
 # Giving a run name to the workflow
-run-name: Run Tests
+run-name: Deploy Application
 # Setting the workflow to run on every push to the repository
 on: push
 jobs:
+  # Running a job to test the application
   test:
     runs-on: ubuntu-latest
     steps:
@@ -22,3 +23,19 @@ jobs:
         run: npm ci
       - name: Running tests
         run: npm run test
+  # Running another job to deploy the application
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Getting the code
+        uses: actions/checkout@v3
+      - name: Installing node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Installing dependencies
+        run: npm ci
+      - name: Building the application
+        run: npm run build
+      - name: Deploying the application
+        run: echo "Deploying the application"
